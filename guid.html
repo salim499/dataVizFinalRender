@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Explication</title>
+    <style>
+        .footer {
+            margin-top: 0rem;
+            padding: 1rem;
+            background-color: #151515;
+            color: #ffffff;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        h1 {
+            margin-left: 10%;
+
+        }
+
+        h2 {
+            margin-left: 11%;
+        }
+
+        p {
+            margin-left: 10%;
+            width: 70%;
+        }
+
+        .p {
+            margin-left: 11%;
+        }
+
+        .a {
+            margin-left: 11%;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <nav class="nav">
+        <ul>
+            <li class="logo">visualisation</li>
+            <li class="items"><a href="./home.html">Home</a></li>
+            <li class="items"><a href="./circle.html">Données visualization</a></li>
+            <li class="items"><a href="./image.html">Images visualization</a></li>
+            <li class="items"><a href="./download.html">Télécharger données</a></li>
+            <li class="items"><a href="./guid.html">Guid</a></li>
+            <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+    </nav>
+    <br /><br /><br /><br /><br />
+    <h1>À-propos de site</h1><br />
+    <p>
+        Dans ce mini site, je vais vous faire découvrir quelques techniques
+        de visualisation de données au format text et encore au format
+        image.
+    </p><br />
+    <p>
+        sur un ensemble de données qui sont dans notre cas une liste de joueurs du football et qui sont encore en
+        fonction dans l’année actuelle (2021).
+    </p><br />
+    <p>
+        les données sont récupérables soit en format json ou csv <a href="./download.html">ici </a>,
+        ou encore en cliquant sur la rubrique <span style="color: blue;">Télécharger données</span> sur la barre de
+        navigation.
+    </p><br />
+    <h1>Navigation</h1><br />
+    <p>
+        Une fois connecter sur le site la page d'acceuil sera affichée,
+        l'utilisateur pourra donc naviguer sur le site via la barre de navigation en haut de la page.
+    </p><br />
+    <h1>Explication</h1><br /><br />
+    <h2>Données visualization :</h2><br />
+    <p class="p">
+        Sur cette rubrique nous allons visualiser les données textuelles et
+        numériques des joueurs comme par exemple : les graphiques, les cercles,
+        les forces dirigées et les réseaux en utilisant plusieurs éléments
+        graphiques interactifs avec l’utilisateur.
+    </p><br />
+    <p class="p">
+        nous avons ici 4 éléments graphiques :
+    </p><br />
+    <a class="a" href="#">les cercles :</a>
+    <p class="p">
+        <br />
+        ici l’utilisateur doit choisir une propriété à observer, et une valeur
+        sur laquelle le cercle va se baser pour groupé les éléments ( joueurs).
+    </p>
+    <p class="p">
+        <br />
+        par exemple : on veut analyser le poids des joueurs pour chaque âge,
+    </p>
+    <p class="p">
+        <br />
+        Dans notre cas alors la propriété observée c’est le poids des joueurs, donc
+        dans propriété observée on clique sur le bouton poids.
+    </p>
+    <p class="p">
+        <br />
+        On veut que les joueurs seront groupés par leur âge, donc dans groupé par
+        on choisit âge en cliquant sur le bouton âge.
+    </p>
+    <p class="p">
+        <br />
+        On pourra voir par exemple que les cercles correspondants aux joueurs
+        avec l'âge qui est plus grand que 30 ans sont plus grands, donc par
+        conséquence on pourra analyser et déduire que de plus en plus les joueurs
+        avancent dans l'âge de plus en plus leur poids s’augmente...
+    </p>
+    <br />
+    <a class="a">les réseaux : </a>
+    <p class="p">
+        <br />
+        Dans cette rubrique on trouve les relations entre deux propriétés qui
+        sont les clubs et les équipes nationaux des joueurs
+    </p>
+    <p class="p">
+        <br />
+        Chaque club et chaque nation sont présentés par des cercles, et pour chaque joueur on trace une ligne entre le
+        cercle qui représente sa nation et le cercle qui représente son club.
+    </p>
+    <p class="p">
+        <br />
+        Comme on pourra le voir clairement que les lignes tracées entre les cercles des nations avec ceux des clubs ne
+        sont pas homogènes.
+    </p>
+    <p class="p">
+        <br />
+        On peut déduire que chaque club contient des joueurs de différentes nationalités, et vis versa chaque nation à
+        des joueurs dans plusieurs clubs.
+    </p>
+    <p class="p">
+        <br />
+        Pour voir les clubs dans lesquels jouent les joueurs d’une nation, il suffit de cliquer sur le cercle qui
+        représente une nation.
+    </p>
+    <p class="p">
+        <br />
+        Pour voir les nations dans lesquelles jouent les joueurs d’un club, il suffit de cliquer sur le cercle qui
+        représente un club.
+    </p>
+    <br />
+    <a class="a">les graphiques : </a>
+    <p class="p">
+        <br />
+        Ici on représente les statistiques d’une propriété choisie par l’utilisateur sous forme d’un camembert,
+        l’utilisateur clique sur une propriété comme par exemple : la taille du joueur, le poids du joueur, le prix du
+        joueur…, ensuite on affiche les résultats sur camembert.
+    </p>
+    <p class="p">
+        <br />
+        Par exemple si on choisit la propriété prix du joueur, on verra clairement que la part la plus grande du
+        camembert revient au joueur lionel messi, ensuite cristiano ronaldo ainsi de suite ce qui voudra dire que le
+        jeurs le plus chère c’est messi et le deuxième le plus chère c’est ronaldo ensuite c’est neymar ainsi de
+        suite…..
+    </p>
+    <br />
+    <a class="a">les graphs(x,y) : </a>
+    <p class="p">
+        <br />
+        Ici on calcule les corrélations entre deux propriétés des joueurs par exemple leur taille et leur poids et tout
+        ça on le fait selon une valeur par exemple un club une nation…
+    </p>
+    <p class="p">
+        <br />
+        Par exemple, on veut voir s’il y a une relation entre le poids d’un joueur avec sa taille pour chaque club, donc
+        on met la valeur de X à poids et la valeur de Y à taille et la valeur de groupé par à club.
+    </p>
+    <p class="p">
+        <br />
+        On veut voir par exemple que pour certains clubs il y a une relation presque linéaire entre les poids de leur
+        joueurs et leur taille, et pour d’autres clubs il y a aucune relation entre ces deux dernières.
+    </p>
+    <br />
+    <h2>Images visualization :</h2><br />
+    <p class="p">
+        Sur cette rubrique nous allons visualiser les images et les données
+        visiuelles des joueursselon plusieurs manières.
+    </p><br />
+    <a class="a" href="#">vis 1 :</a>
+    <p class="p">
+        <br />
+        ici on prend toutes les images des joueurs avec leur maillots des clubs et on minimise la largeur de chaque
+        image pour avoir à la fin une sorte d'une sairie horizontale des couleurs, la somme de ses images nous donnent
+        une image colorié à partir de laquelle on pourra extraire desinformations.
+    </p>
+    <p class="p">
+        <br />
+        Par exemple, on peut savoir le club qui contient le plus de joueurs de notre collection rien qu'en regardant la
+        couleur la plus dominante et la plus présente sur notre série de couleurs.
+    </p>
+    <p class="p">
+        <br />
+        Pour voir l’image originale, il suffit de faire passer la souris sur l’image.
+    </p>
+    <br />
+    <a class="a" href="#">vis 2 :</a>
+    <p class="p">
+        <br />
+        ici on prend toutes les images des joueurs avec leur maillots des clubs et on minimise la largeur de chaque
+        image pour avoir à la fin une sorte d'une sairie verticale des couleurs avec des espaces entre les éléments, la
+        somme de ses images nous donnent une image colorié à partir de laquelle on pourra extraire desinformations.
+    </p>
+    <p class="p">
+        <br />
+        Par exemple, on peut savoir le club qui contient le plus de joueurs de notre collection rien qu'en regardant la
+        couleur la plus dominante et la plus présente sur notre série de couleurs.
+    </p>
+    <p class="p">
+        <br />
+        Pour voir l’image originale, il suffit de faire passer la souris sur l’image.
+    </p>
+    <br />
+    <a class="a" href="#">vis 3 :</a>
+    <p class="p">
+        <br />
+        ici on prend toutes les images des joueurs avec leur maillots des clubs et on minimise la largeur de chaque
+        image pour avoir à la fin une sorte d'une sairie verticale des couleurs, la somme de ses images nous donnent une
+        image colorié à partir de laquelle on pourra extraire desinformations.
+    </p>
+    <p class="p">
+        <br />
+        Par exemple, on peut savoir le club qui contient le plus de joueurs de notre collection rien qu'en regardant la
+        couleur la plus dominante et la plus présente sur notre série de couleurs.
+    </p>
+    <p class="p">
+        <br />
+        Ici nous avons ajouté une rotation de 360 degrés pour chaque image afin de donner une meilleure visibilité.
+    </p>
+    <p class="p">
+        <br />
+        Pour voir l’image originale, il suffit de faire passer la souris sur l’image.
+    </p>
+    <br />
+    <h1>Téléchargement des données</h1><br />
+    <p>
+        Pour la récupération des données utilisés dans notre site vous pouvez naviguer sur <span
+            style="color: red;">Télécharger données</span>
+        , sur cette page vous allez trouver deux boutons, le premier pour télécharger les données en format <span
+            style="color: chartreuse;">JSON</span>, et le deuxième pour télécharger les données au format <span
+            style="color: tomato;">CSV</span>.
+    </p>
+    <br />
+    <h1>Voir les données</h1><br />
+    <p>
+        Pour voir les données avec une meilleure visibilité vous pouvez cliquer <a target="_blank"
+            href="https://docs.google.com/spreadsheets/d/14sRwy5T1o_8yxB8Xwqy5bMwH9FyClvjt57nCj9zklXM/edit?usp=sharing">data_google_sheet</a>.
+    </p>
+    <br />
+    <h1>Librairies utilisées</h1><br />
+    <a target="_blank" href="https://d3js.org/" class="a">d3Js</a><br /><br />
+    <a target="_blank" href="https://d3plus.org/" class="a">d3Plus</a>
+    <br /><br /><br /><br />
+    <div class="footer">
+        <p>Cours Data visualization</p>
+    </div>
+</body>
+
+</html>

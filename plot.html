@@ -1,0 +1,224 @@
+<!--  <h1>Liste des joueurs du football en 2020</h1><br/>
+    <h2>Projet réalisé par : HASSOUNA SALIM</h2><br/>
+    <h2>Descriptif : </h2>
+    <div class="descriptif">
+    <p>Vous pouvez consulter ici la liste de tous les joueurs du football du monde qui sont encore en fonction
+        en 2020 
+    </p>
+    <p>Je vais ajouter des filtres pour changer le contenu de la page html selon plusieurs critères comme l'age des joueurs, l'équipe nationnal, nombres de buts inscrits...</p>
+    <p>l'affichage des joueurs sera fait en une sorte d'un trombinoscope avec les photos des joueurs ainsi que leur informations</p>
+</div><br/>
+    <pre>lien vers les données en csv : <a target="_blank" href="https://docs.google.com/spreadsheets/d/14sRwy5T1o_8yxB8Xwqy5bMwH9FyClvjt57nCj9zklXM/edit?usp=sharing">liste des joueurs.csv</a></pre>
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>visualisation des données</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="http://d3plus.org/js/d3.min.js"></script>
+    <script src="https://d3plus.org/js/d3plus-plot.v0.9.full.min.js"></script>
+    <style>
+      body {
+        margin-top: 0%;
+        align-items: center;
+        align-self: center;
+        align-content: center;
+      }
+
+      pre {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 16px;
+        font-weight: lighter;
+        text-align: center;
+        display: block;
+        margin: 16px;
+        background: black;
+        margin-left: 9.4%;
+        width: 80%;
+        color: #fff;
+      }
+      a:hover {
+        font-size: 26px;
+        color: blue;
+      }
+      .descriptif {
+        margin-left: 9.5%;
+        background: none;
+      }
+      .navh2 {
+        background: rgb(214, 224, 224);
+        border-radius: 15%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <ul>
+        <li class="logo">visualisation</li>
+        <li class="items"><a href="./home.html">Acceuil</a></li>
+        <li class="items"><a href="./circle.html">Données visualization</a></li>
+        <li class="items"><a href="./image.html">Images visualization</a></li>
+        <li class="items"><a href="./download.html">Télécharger données</a></li>
+        <li class="btn">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="items"><a href="./guid.html">Guid</a></li>
+      </ul>
+    </nav>
+    <br />
+    <br /><br />
+    <header>
+      <br /><br /><br /><br />
+      <nav>
+        <ul id="nav_bars">
+          <li class="nav-links">
+            <a class="a" href="./chart.html"
+              ><h2 class="navh2">Graphique</h2></a
+            >
+          </li>
+          <li class="nav-links">
+            <a class="a" href="./circle.html"><h2 class="navh2">Cercle</h2></a>
+          </li>
+          <li class="nav-links">
+            <a class="a" href="./plot.html"
+              ><h2 class="navh2">Force dirigée</h2></a
+            >
+          </li>
+          <li class="nav-links">
+            <a class="a" href="./network.html"><h2 class="navh2">Réseau</h2></a>
+          </li>
+        </ul>
+        <ul id="nav_bars">
+          <li><h2 class="h2">x :</h2></li>
+          <li
+            data-val="height_cm"
+            onclick="Choix2(this)"
+            class="nav-links"
+            id="gmail"
+          >
+            |<a style="color: red" class="a" href="#">taille</a> |
+          </li>
+          <br />
+          <li data-val="weight_kg" onclick="Choix2(this)" class="nav-links">
+            |<a style="color: red" class="a" href="#">poids</a> |
+          </li>
+          <li data-val="age" onclick="Choix2(this)" class="nav-links">
+            |<a style="color: red" class="a" href="#">age</a> |
+          </li>
+          <li
+            data-val="international_reputation"
+            onclick="Choix2(this)"
+            class="nav-links"
+          >
+            |<a style="color: red" class="a" href="#">nombre de selections</a> |
+          </li>
+          <li data-val="value_eur" onclick="Choix2(this)" class="nav-links">
+            |<a style="color: red" class="a" href="#">prix joueur</a> |
+          </li>
+        </ul>
+        <ul id="nav_bars">
+          <li><h2 class="h2">y :</h2></li>
+          <li
+            data-val="height_cm"
+            onclick="Choix3(this)"
+            class="nav-links"
+            id="gmail"
+          >
+            |<a style="color: red" class="a" href="#">taille</a> |
+          </li>
+          <br />
+          <li data-val="weight_kg" onclick="Choix3(this)" class="nav-links">
+            |<a style="color: red" class="a" href="#">poids</a> |
+          </li>
+          <li data-val="age" onclick="Choix3(this)" class="nav-links">
+            |<a style="color: red" class="a" href="#">age</a> |
+          </li>
+          <li
+            data-val="international_reputation"
+            onclick="Choix3(this)"
+            class="nav-links"
+          >
+            |<a style="color: red" class="a" href="#">nombre de selections</a> |
+          </li>
+          <li data-val="value_eur" onclick="Choix3(this)" class="nav-links">
+            |<a style="color: red" class="a" href="#">prix joueur</a> |
+          </li>
+        </ul>
+        <ul id="nav_bars">
+          <li><h2 class="h2">groupé par :</h2></li>
+          <li
+            data-val="nationality"
+            onclick="Choix(this)"
+            class="nav-links"
+            id="gmail"
+          >
+            |<a style="color: red" class="a" href="#">nationalité</a> |
+          </li>
+          <br />
+          <li data-val="club" onclick="Choix(this)" class="nav-links">
+            |<a style="color: red" class="a" href="#">club</a> |
+          </li>
+          <li data-val="age" onclick="Choix(this)" class="nav-links">
+            |<a style="color: red" class="a" href="#">age</a> |
+          </li>
+          <li
+            data-val="player_positions"
+            onclick="Choix(this)"
+            class="nav-links"
+          >
+            |<a style="color: red" class="a" href="#">positions</a> |
+          </li>
+          <li data-val="preferred_foot" onclick="Choix(this)" class="nav-links">
+            |<a style="color: red" class="a" href="#">pied fort</a> |
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <br /><br /><br />
+  </body>
+  <script>
+    function randomIntFromInterval(min, max) {
+      // min and max included
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    let data = [];
+    let x = "";
+    let y = "";
+    fetch("data3.json")
+      .then((response) => response.json())
+      .then((json) => {
+        data = json;
+      });
+    function Choix(e) {
+      let svg = document.getElementsByTagName("svg");
+      if (svg[0]) {
+        svg[0].remove();
+      }
+      // Force directed
+      data.forEach((element) => {
+        element["y"] = element[y];
+        element["x"] = element[x];
+      });
+      new d3plus.StackedArea().data(data).groupBy(e.dataset.val).render();
+    }
+    function Choix2(e) {
+      x = e.dataset.val;
+    }
+    function Choix3(e) {
+      y = e.dataset.val;
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      $(".btn").click(function () {
+        $(".items").toggleClass("show");
+        $("ul li").toggleClass("hide");
+      });
+    });
+  </script>
+</html>

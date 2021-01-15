@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Téléchargement</title>
+    <style>
+      .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        font-family: sans-serif;
+      }
+      .a {
+        display: block;
+        background: #00a9d4;
+        color: #fff;
+        padding: 15px;
+        cursor: pointer;
+        text-decoration: none;
+        width: 320px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 20px;
+      }
+      .a:hover {
+        background: #00729d;
+      }
+      .btn-22 {
+        background: #f98909;
+      }
+
+      .btn-22:hover {
+        background: #dc6c11;
+      }
+      p {
+        color: #888;
+        padding: 15px;
+      }
+      .footer {
+        margin-top: 0rem;
+        padding: 1rem;
+        background-color: #151515;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <ul>
+        <li class="logo">visualisation</li>
+        <li class="items"><a href="./home.html">Home</a></li>
+        <li class="items"><a href="./circle.html">Données visualization</a></li>
+        <li class="items"><a href="./image.html">Images visualization</a></li>
+        <li class="items"><a href="./download.html">Télécharger données</a></li>
+        <li class="items"><a href="./guid.html">Guid</a></li>
+        <li class="btn">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="body">
+      <br /><br />
+      <br /><br />
+      <a
+        style="background-color: orange"
+        class="a"
+        href="data3.csv"
+        download="data_csv"
+      >
+        Télécharger
+      </a>
+      <p>Télécharger csv</p>
+
+      <a
+        style="background-color: green"
+        class="a"
+        href="data3.json"
+        class="btn-22"
+        download="data_json"
+      >
+        Télécharger
+      </a>
+      <p>Télécharger json</p>
+      <a
+        class="a"
+        target="blank"
+        href="https://docs.google.com/spreadsheets/d/14sRwy5T1o_8yxB8Xwqy5bMwH9FyClvjt57nCj9zklXM/edit?usp=sharing"
+        >Voir les données sur google sheet</a
+      >
+    </div>
+    <div class="footer">
+      <p>Cours Data visualization</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Images</title>
+	<style>
+		.body1 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			flex-direction: row;
+			font-family: sans-serif;
+		}
+
+		.body2 {
+			margin-top: 8%;
+			margin-bottom: 48%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			font-family: sans-serif;
+		}
+
+		.a {
+			display: block;
+			background: #00A9D4;
+			color: #fff;
+			padding: 15px;
+			cursor: pointer;
+			text-decoration: none;
+			width: 220px;
+			text-align: center;
+			border-radius: 5px;
+			font-size: 20px;
+		}
+
+		.a:hover {
+			background: #00729D;
+		}
+
+		.btn-22 {
+			background: #F98909;
+		}
+
+		.btn-22:hover {
+			background: #DC6C11;
+		}
+
+		p {
+			color: #888;
+			padding: 15px;
+		}
+
+		.footer {
+			margin-top: 0rem;
+			padding: 0.5rem;
+			background-color: #151515;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		}
+
+		.img1 {
+			width: 1.2%;
+			height: 450px;
+		}
+
+		.img1:hover {
+			width: 500px;
+		}
+
+		.img2 {
+			width: 650px;
+			height: 5px;
+		}
+
+		.img2:hover {
+			height: 450px;
+			width: 500px;
+		}
+
+		.body3 {
+			transition: width 1s, height 1s, background-color 1s, transform 1s;
+			cursor: pointer;
+		}
+
+		.body3:hover {
+			height: 450px;
+			width: 500px;
+			transform: rotate(360deg);
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="nav">
+		<ul>
+			<li class="logo">visualisation</li>
+			<li class="items"><a href="#">Home</a></li>
+			<li class="items"><a href="./circle.html">Données visualization</a></li>
+			<li class="items"><a href="#">Images visualization</a></li>
+			<li class="items"><a href="./download.html">Télécharger données</a></li>
+			<li class="items"><a href="./guid.html">Guid</a></li>
+			<li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+
+		</ul>
+	</nav>
+	<br /><br />
+	<header>
+		<br /><br /><br /><br />
+		<nav>
+			<ul id="nav_bars">
+				<li data-val="1" onclick="Choix(this)" class="nav-links"><a class="a" href="#">
+						<h2 class="navh2">vis 1</h2>
+					</a></li>
+				<li data-val="2" onclick="Choix(this)" class="nav-links"><a class="a" href="#">
+						<h2 class="navh2">vis 2</h2>
+					</a></li>
+				<li data-val="3" onclick="Choix(this)" class="nav-links"><a class="a" href="#">
+						<h2 class="navh2">vis 3</h2>
+					</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="content">
+
+	</div>
+	<div class="footer">
+		<p>Cours Data visualization</p>
+	</div>
+</body>
+<script>
+	let data = []
+	fetch("data3.json")
+		.then(response => response.json())
+		.then(json => {
+			json.forEach(element => {
+				if (element.img) {
+					data.push(element)
+				}
+			});
+		});
+	function Choix(e) {
+		let bodys = document.getElementsByClassName('content')[0]
+		bodys.innerHTML = ""
+		if (e.dataset.val === "1") {
+			console.log("d")
+			let body2 = document.getElementsByClassName('content')[0]
+			body2.innerHTML = "<div class=body1>"
+			let body = document.getElementsByClassName('body1')[0]
+			data.forEach(player => {
+				body.innerHTML = body.innerHTML +
+					`
+	   <img class="img${e.dataset.val}" src=${"images/" + player.img}>
+	   `
+			});
+		}
+		else if (e.dataset.val === "2") {
+			let body2 = document.getElementsByClassName('content')[0]
+			body2.innerHTML = "<div class=body2>"
+			let body = document.getElementsByClassName('body2')[0]
+			data.forEach(player => {
+				body.innerHTML = body.innerHTML +
+					`
+	   <img class="img${e.dataset.val}" src=${"images/" + player.img}>
+	   `
+					+ "<br/>"
+			});
+		} else if (e.dataset.val === "3") {
+			let body2 = document.getElementsByClassName('content')[0]
+			body2.innerHTML = "<div class=body2>"
+			let body = document.getElementsByClassName('body2')[0]
+			data.forEach(player => {
+				body.innerHTML = body.innerHTML +
+					`
+	   <div class=body3>
+	   <img class="img2" src=${"images/" + player.img}>
+	   </div>
+	   `
+					+ "<br/>"
+			});
+		}
+	}
+</script>
+
+</html>
